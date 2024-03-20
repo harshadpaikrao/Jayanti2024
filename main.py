@@ -23,7 +23,7 @@ def collect():
 @app.route('/', methods=['GET','POST'])
 def index():
   if request.method == 'GET':
-    return render_template('home.html', total=total_sheet['Amount'].values[0], lb=total_sheet['Amount'].values[1], exp=total_sheet['Amount'].values[2], bal=total_sheet['Amount'].values[3])
+    return render_template('index.html', total=total_sheet['Amount'].values[0], lb=total_sheet['Amount'].values[1], exp=total_sheet['Amount'].values[2], bal=total_sheet['Amount'].values[3])
   elif request.method == 'POST':
     n = request.form['number']
     record = df_collect.loc[df_collect['Receipt number']==int(n)]
